@@ -52,9 +52,6 @@ public class TemplateListNode {
          * put the method in here
          */
 
-        public String print(ListNode head){
-            return head.toString();
-        }
 
     }
 
