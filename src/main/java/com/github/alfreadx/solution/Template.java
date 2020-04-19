@@ -2,8 +2,6 @@ package com.github.alfreadx.solution;
 
 public class Template{
 
-
-
     /**
      * the Solution class
      */

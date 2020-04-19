@@ -2,18 +2,6 @@ package com.github.alfreadx.solution;
 
 public class TemplateListNode {
 
-    public static void main(String[] args) {
-        Solution solution = new Solution();
-
-        /**
-         * put the test in here
-         * ex: soluiton.method(...);
-         */
-
-
-
-    }
-
     static ListNode getTestData(){
         ListNode head = new ListNode(3);
         head.next = new ListNode(2);

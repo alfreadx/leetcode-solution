@@ -17,8 +17,8 @@ class TemplateTest {
         );
     }
 
-    //class under test
-    private Template.Solution cut = new Template.Solution();
+    //put cut(class under test) in here
+
 
     @ParameterizedTest
     @MethodSource("getParameters")
