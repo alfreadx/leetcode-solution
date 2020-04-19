@@ -25,7 +25,7 @@ class TemplateTest {
     public void test(){
 
 
-
+        assertEquals(0, 0);
     }
 
 }
