@@ -2,64 +2,53 @@ package com.github.alfreadx.solution;
 
 public class Q92 {
 
-    public static void main(String[] args) {
-        Q92 q = new Q92();
-        Solution soluiton = q.new Solution();
-
-        /**
-         * put the test in here
-         * ex: soluiton.method(...);
-         */
-
-        ListNode head = getTestData();
-        int m = 2, n = 4;
-        ListNode result = soluiton.reverseBetween(head, m, n);
-        System.out.println(result);
-
-    }
-
-    static ListNode getTestData() {
-        ListNode head = new ListNode(1);
-        head.next = new ListNode(2);
-        head.next.next = new ListNode(3);
-        head.next.next.next = new ListNode(4);
-        head.next.next.next.next = new ListNode(5);
-
-
-        return head;
-    }
-
-
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-
-        @Override
-        public String toString() {
-            return "ListNode{" +
-                    "val=" + val +
-                    ", next=" + next +
-                    '}';
-        }
-    }
 
     /**
      * the Solution class
-     * 迴圈版本
      */
-    class Solution {
+    static class Solution {
         /**
          * put the method in here
+         * 思路：先走到m, 反轉到n, 再接起後面
          */
         public ListNode reverseBetween(ListNode head, int m, int n) {
+            if (head == null) return null;
 
+            // 在頭部前面加個DUMMY
+            ListNode headDummy = new ListNode(0);
+            headDummy.next = head;
+            head = headDummy;
 
-            return null;
+            // 走到m
+            // i for m;
+            int i = 0;
+            ListNode prev = null;
+
+            while (i < m) {
+                prev = head;
+                head = head.next;
+                i++;
+            }
+
+            // 反轉到 n
+            // j for n;
+            int j = i;
+            ListNode reverse = null, next;
+            ListNode tail = head;
+
+            while(head != null && j <= n){
+                next = head.next;
+                head.next = reverse;
+                reverse = head;
+                head = next;
+                j++;
+            }
+
+            // 全部串起來
+            prev.next = reverse;
+            tail.next = head;
+
+            return headDummy.next;
         }
 
     }
