@@ -12,19 +12,15 @@ public class Q83 {
         public ListNode deleteDuplicates(ListNode head) {
             if (head == null) return null;
 
-            ListNode headDummy = new ListNode(0);
-            headDummy.next = head;
-            head = headDummy;
-
-            while (head.next != null) {
-                while (head.next.next != null && head.next.val == head.next.next.val) {
-                    head.next = head.next.next;
+            ListNode curr = head;
+            while (curr != null) {
+                while (curr.next != null && curr.val == curr.next.val) {
+                    curr.next = curr.next.next;
                 }
-                head = head.next;
+                curr = curr.next;
             }
 
-
-            return headDummy.next;
+            return head;
         }
 
     }
