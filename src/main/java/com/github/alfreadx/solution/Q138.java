@@ -1,5 +1,7 @@
 package com.github.alfreadx.solution;
 
+import com.github.alfreadx.solution.helper.Node;
+
 public class Q138 {
 
     /**

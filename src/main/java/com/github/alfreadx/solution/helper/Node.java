@@ -1,4 +1,4 @@
-package com.github.alfreadx.solution;
+package com.github.alfreadx.solution.helper;
 
 
 import lombok.Data;

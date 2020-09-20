@@ -1,5 +1,7 @@
 package com.github.alfreadx.solution;
 
+import com.github.alfreadx.solution.helper.ListNode;
+
 public class Q92 {
 
 
