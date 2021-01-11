@@ -15,7 +15,8 @@ class Q1143Test {
         return Stream.of(
                 Arguments.of("abcde", "ace", 3),
                 Arguments.of("abc", "abc", 3),
-                Arguments.of("abc", "def", 0)
+                Arguments.of("abc", "def", 0),
+                Arguments.of("mhunuzqrkzsnidwbun", "szulspmhwpazoxijwbq", 6)
         );
     }
 
