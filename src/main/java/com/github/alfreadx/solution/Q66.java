@@ -1,6 +1,30 @@
 package com.github.alfreadx.solution;
 
 public class Q66 {
+    /**
+     * the good practice
+     */
+    static class Solution2 {
+        public int[] plusOne(int[] digits) {
+            int carry = 1;
+            int[] dig;
+            int len = digits.length;
+
+            for (int i = len - 1; i >= 0; i--) {
+                digits[i] = digits[i] + carry;
+                carry = digits[i] / 10;
+                digits[i] = digits[i] % 10;
+            }
+
+            if (carry == 0) return digits;
+            else {
+                dig = new int[len + 1];
+                dig[0] = carry;
+                System.arraycopy(digits, 0, dig, 1, len);
+                return dig;
+            }
+        }
+    }
 
 
     /**
